@@ -1,11 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
-  const buttonStyles = {
-    width: "3rem",
-    height: "3rem",
-  };
-
   return (
     <nav className="bg-white shadow-sm mb-3 flex justify-start gap-4 p-4">
       <NavLink
@@ -26,10 +21,7 @@ export const Navbar = () => {
       >
         About
       </NavLink>
-      <button
-        style={buttonStyles}
-        className="ml-auto rounded-full p-3 border-blue-700 border"
-      >
+      <button className="ml-auto rounded-full p-3 border-blue-700 border w-12 h-12 relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 576 512"
