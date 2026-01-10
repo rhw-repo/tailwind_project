@@ -8,13 +8,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container mb-4">
+      <main className="m-4 flex flex-col justify-center items-center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </div>
+      </main>
     </>
   );
 }
