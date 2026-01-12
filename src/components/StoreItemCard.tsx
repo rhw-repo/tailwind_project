@@ -19,7 +19,7 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         className="w-full h-full object-cover rounded-sm"
       />
     </div>
-    <div className="flex justify-between">
+    <div className="flex justify-between items-baseline">
       <h2 className="font-extrabold text-2xl text-black-600 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950">
         {name}
       </h2>
