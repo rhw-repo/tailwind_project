@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="sticky flex justify-between bg-white shadow-sm mb-3 gap-1 p-4 w-screen">
+    <nav className="sticky flex justify-between bg-white shadow-sm mb-8 px-8 gap-1 p-4 w-screen">
       <div className="flex justify-start">
         <NavLink
           to="/"
