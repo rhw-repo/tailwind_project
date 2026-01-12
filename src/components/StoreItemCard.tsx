@@ -1,3 +1,5 @@
+import { formatCurrency } from "../utilities/formatCurrency";
+
 export interface StoreItemCardProps {
   id: number;
   name: string;
@@ -24,7 +26,7 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         {name}
       </h2>
       <p className="text-lg font-semibold text-gray-800 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950">
-        &euro;{price}
+        {formatCurrency(price)}
       </p>
     </div>
     <div className="flex justify-center gap-4">
