@@ -7,13 +7,16 @@ export interface StoreItemCardProps {
   imgUrl: string;
 }
 
+//Test placeholder
+const quantity = 1;
+
 export const StoreItemCard: React.FC<StoreItemCardProps> = ({
   id,
   name,
   price,
   imgUrl,
 }) => (
-  <div key={id} className="shadow-sm p-4 rounded-sm">
+  <div key={id} className="shadow-sm p-4 rounded-sm h-full">
     <div className="aspect-3/2 w-full">
       <img
         src={imgUrl}
@@ -21,7 +24,7 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         className="w-full h-full object-cover rounded-sm"
       />
     </div>
-    <div className="flex justify-between items-baseline">
+    <div className="flex justify-between items-baseline mb-8">
       <h2 className="font-extrabold text-2xl text-black-600 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950">
         {name}
       </h2>
@@ -29,21 +32,28 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         {formatCurrency(price)}
       </p>
     </div>
-    <div className="flex justify-center gap-4">
-      <button className="bg-blue-700 text-neutral-100 rounded-sm px-4 py-2">
-        +
-      </button>
-      <span>no. in cart</span>
-      <button className="bg-blue-700 text-neutral-100 rounded-sm px-4 py-2">
-        -
-      </button>
-    </div>
-    <div className="flex justify-center">
-      <button className="bg-red-400 text-neutral-100 rounded-sm p-2 m-4">
-        Remove
-      </button>
+
+    <div className="mt-auto">
+      {quantity === 0 ? (
+        <button className="w-full bg-blue-700 text-neutral-100 rounded-sm px-4 py-2">
+          Add To Cart
+        </button>
+      ) : (
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex justify-center items-center gap-2">
+            <button className="bg-blue-700 text-neutral-100 rounded-sm px-4 py-2">
+              +
+            </button>
+            <span className="text-2xl">{quantity} in cart</span>
+            <button className="bg-blue-700 text-neutral-100 rounded-sm px-4 py-2">
+              -
+            </button>
+          </div>
+          <button className="bg-red-400 text-xs sm:text-sm md:text-base lg:text-lg text-neutral-100 rounded-sm p-2 m-4">
+            Remove
+          </button>
+        </div>
+      )}
     </div>
   </div>
 );
-
-// text-gray-600 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950
