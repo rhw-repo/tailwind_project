@@ -49,7 +49,7 @@ export const ShoppingCart: React.FC<ShoppingCartItemProps> = () => {
         `}
         >
           <header className="flex items-center justify-between px-6 py-4 border-b">
-            <h2 className="text-xl font-semibold">Shopping Cart</h2>
+            <h2 className="text-xl font-semibold">Cart</h2>
             <button
               onClick={closeCart}
               aria-label="Close cart"
@@ -59,9 +59,15 @@ export const ShoppingCart: React.FC<ShoppingCartItemProps> = () => {
             </button>
           </header>
 
-          <div className="flex-1 p-6 overflow-y-auto">
+          <div className="p-6 overflow-y-auto">
             <p className="text-gray-500">Your cart is empty.</p>
+            <p className="text-gray-950 font-bold">Total:</p>
           </div>
+          <footer className="px-6 py-4 border-t">
+            <button className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700">
+              Checkout
+            </button>
+          </footer>
         </aside>
       </div>
     </>
