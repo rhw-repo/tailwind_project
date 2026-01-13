@@ -1,13 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
-
-/*type ShoppingCartItemProps = {
-  id: number;
-  name: string;
-  price: number;
-  imgUrl: string;
-};*/
+import { formatCurrency } from "../utilities/formatCurrency";
+import storeItems from "../data/items.json";
 
 export const ShoppingCart = () => {
   const { isOpen, closeCart, cartItems } = useShoppingCart();
@@ -66,7 +61,15 @@ export const ShoppingCart = () => {
                 <CartItem key={item.id} {...item} />
               ))}
             </div>
-            <p className="text-gray-950 text-right font-bold mt-4">Total:</p>
+            <p className="text-gray-950 text-right font-bold mt-4">
+              Total:{" "}
+              {formatCurrency(
+                cartItems.reduce((total, cartItem) => {
+                  const item = storeItems.find((i) => i.id === cartItem.id);
+                  return total + (item?.price || 0) * cartItem.quantity;
+                }, 0)
+              )}
+            </p>
           </div>
           <footer className="px-6 py-4 border-t">
             <button className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700">
