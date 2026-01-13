@@ -35,9 +35,14 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
       </div>
       <div className="flex justify-end items-center gap-4">
         <div className="flex flex-col justify-center items-end">
-          <p>total</p>
+          <p>{formatCurrency(item.price * quantity)}</p>
         </div>
-        <button className="p-4">X</button>
+        <button
+          onClick={() => removeFromCart(item.id)}
+          className="w-8 h-8 flex justify-center items-center border border-red-600 rounded-sm text-red-600 transition-colors hover:text-white hover:bg-red-600 active:bg-red-900 active:text-white"
+        >
+          &times;
+        </button>
       </div>
     </div>
   );
