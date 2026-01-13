@@ -1,5 +1,6 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import storeItems from "../data/items.json";
+import { formatCurrency } from "../utilities/formatCurrency";
 
 type CartItemProps = {
   id: number;
@@ -25,13 +26,15 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <p>{item.name}</p>
-          <p>{item.price}</p>
+          <p>
+            {item.name}
+            {quantity > 1 && <span className="text-xs p-2">x {quantity}</span>}
+          </p>
+          <p className="text-xs">{formatCurrency(item.price)}</p>
         </div>
       </div>
       <div className="flex justify-end items-center gap-4">
         <div className="flex flex-col justify-center items-end">
-          <p>{quantity}</p>
           <p>total</p>
         </div>
         <button className="p-4">X</button>
