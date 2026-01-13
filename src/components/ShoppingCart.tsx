@@ -1,15 +1,16 @@
 import { useEffect, useRef } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { CartItem } from "./CartItem";
 
-type ShoppingCartItemProps = {
+/*type ShoppingCartItemProps = {
   id: number;
   name: string;
   price: number;
   imgUrl: string;
-};
+};*/
 
-export const ShoppingCart: React.FC<ShoppingCartItemProps> = () => {
-  const { isOpen, closeCart } = useShoppingCart();
+export const ShoppingCart = () => {
+  const { isOpen, closeCart, cartItems } = useShoppingCart();
 
   const isOpenRef = useRef(isOpen);
   const closeCartRef = useRef(closeCart);
@@ -60,8 +61,12 @@ export const ShoppingCart: React.FC<ShoppingCartItemProps> = () => {
           </header>
 
           <div className="p-6 overflow-y-auto">
-            <p className="text-gray-500">Your cart is empty.</p>
-            <p className="text-gray-950 font-bold">Total:</p>
+            <div className="flex flex-col gap-4 text-gray-500">
+              {cartItems.map((item) => (
+                <CartItem key={item.id} {...item} />
+              ))}
+            </div>
+            <p className="text-gray-950 text-right font-bold mt-4">Total:</p>
           </div>
           <footer className="px-6 py-4 border-t">
             <button className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700">

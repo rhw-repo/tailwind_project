@@ -17,7 +17,7 @@ type ShoppingCartContext = {
   isOpen: boolean;
 };
 
-type CartItem = {
+export type CartItem = {
   id: number;
   quantity: number;
 };

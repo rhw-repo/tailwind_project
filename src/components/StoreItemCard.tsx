@@ -20,7 +20,9 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
     decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart();
+
   const quantity = getItemQuantity(id);
+
   return (
     <div key={id} className="shadow-sm p-4 rounded-sm h-full">
       <div className="aspect-3/2 w-full">
