@@ -29,7 +29,6 @@ export const ShoppingCart = () => {
   return (
     <>
       <div
-        onClick={closeCart}
         className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
@@ -51,7 +50,7 @@ export const ShoppingCart = () => {
               aria-label="Close cart"
               className="p-2 text-gray-600 hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
             >
-              ✕
+              &times;
             </button>
           </header>
 
