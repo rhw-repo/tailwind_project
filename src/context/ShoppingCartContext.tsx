@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
+import { ShoppingCart } from "../components/ShoppingCart";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -33,6 +34,7 @@ export const ShoppingCartProvider = ({
 
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  // reduce() method to transform this array of objects into single aggregate value (a number)
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
@@ -45,8 +47,13 @@ export const ShoppingCartProvider = ({
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
+  // Build new arrays by inducing functional state updates rather than directly
+  // mutating state to avoid introducing errors
   const increaseCartQuantity = (id: number) => {
     setCartItems((currItems) => {
+      // Checks if id of item to add matches id of existing items in cart
+      // if not, == null is true since find()method returns either
+      // an object (a match) or undefined (nothing matched)
       if (currItems.find((item) => item.id === id) == null) {
         return [...currItems, { id, quantity: 1 }];
       } else {
@@ -64,6 +71,7 @@ export const ShoppingCartProvider = ({
   const decreaseCartQuantity = (id: number) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
+        // Filter to return only items where no id match is found
         return currItems.filter((item) => item.id !== id);
       } else {
         return currItems.map((item) => {
@@ -79,6 +87,7 @@ export const ShoppingCartProvider = ({
 
   const removeFromCart = (id: number) => {
     setCartItems((currItems) => {
+      // Filter to return an array where item(s) with matching id are ommitted
       return currItems.filter((item) => item.id !== id);
     });
   };
@@ -97,6 +106,7 @@ export const ShoppingCartProvider = ({
       }}
     >
       {children}
+      <ShoppingCart />
     </ShoppingCartContext.Provider>
   );
 };
