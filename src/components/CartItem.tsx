@@ -26,7 +26,7 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <p>
+          <p className="text-xs font-semibold">
             {item.name}
             {quantity > 1 && <span className="text-xs p-2">x {quantity}</span>}
           </p>
@@ -35,7 +35,9 @@ export const CartItem = ({ id, quantity }: CartItemProps) => {
       </div>
       <div className="flex justify-end items-center gap-4">
         <div className="flex flex-col justify-center items-end">
-          <p>{formatCurrency(item.price * quantity)}</p>
+          <p className="text-sm font-bold">
+            {formatCurrency(item.price * quantity)}
+          </p>
         </div>
         <button
           onClick={() => removeFromCart(item.id)}
