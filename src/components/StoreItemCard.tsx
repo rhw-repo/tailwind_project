@@ -24,8 +24,8 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
   const quantity = getItemQuantity(id);
 
   return (
-    <div key={id} className="shadow-sm p-4 rounded-sm h-full">
-      <div className="aspect-3/2 w-full">
+    <div key={id} className="flex flex-col shadow-sm p-4 rounded-sm h-full">
+      <div className="aspect-3/2 w-full overflow-hidden">
         <img
           src={imgUrl}
           alt={name}
@@ -33,7 +33,7 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         />
       </div>
       <div className="flex justify-between items-baseline mb-8">
-        <h2 className="font-extrabold text-2xl text-black-600 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950">
+        <h2 className="font-extrabold text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl text-black-600 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950">
           {name}
         </h2>
         <p className="text-lg font-semibold text-gray-800 hover:text-gray-900 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 active:text-purple-950">
