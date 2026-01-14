@@ -50,7 +50,7 @@ yarn dev
 
 ---
 
-[Connect with me on LinkedIn](https://www.linkedin.com/in/ruth-westnidge/)
+### [Connect with me on LinkedIn](https://www.linkedin.com/in/ruth-westnidge/)
 
 ---
 
