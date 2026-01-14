@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 import { ShoppingCart } from "../components/ShoppingCart";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -33,7 +34,10 @@ export const ShoppingCartProvider = ({
 }: ShoppingCartProviderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    "shopping-cart",
+    []
+  );
 
   // reduce() method to transform this array of objects into single aggregate value (a number)
   const cartQuantity = cartItems.reduce(
