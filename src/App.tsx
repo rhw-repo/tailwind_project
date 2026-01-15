@@ -4,20 +4,25 @@ import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import BuggyComponent from "./components/BuggyComponent";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
     <>
-      <ShoppingCartProvider>
-        <Navbar />
-        <main className="m-4 flex flex-col justify-center items-center">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
-      </ShoppingCartProvider>
+      <ErrorBoundary resetKey={location.pathname}>
+        <ShoppingCartProvider>
+          <Navbar />
+          <main className="m-4 flex flex-col justify-center items-center">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/store" element={<Store />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/bug" element={<BuggyComponent />} />
+            </Routes>
+          </main>
+        </ShoppingCartProvider>
+      </ErrorBoundary>
     </>
   );
 }

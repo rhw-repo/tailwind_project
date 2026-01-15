@@ -101,3 +101,11 @@ Thank you to all the creators whose images feature in this project:
 
 - **Multi USB-C Hub**  
   Photo by Kindel Media on <a href="https://www.pexels.com/photo/a-close-up-shot-of-a-usb-hub-attached-on-a-laptop-7054723/">Pexels</a>
+
+#### Images used for the ErrorBoundary fallback UI
+
+- **Gray and Orange Plastic Robot Toy**  
+  Photo by <a href="https://unsplash.com/@emilipothese?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Emilipothèse</a> on <a href="https://unsplash.com/photos/gray-and-orange-plastic-robot-toy-LEPhZkQbUrk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- **Abstract Shapes in Muted Colors**  
+  Illustration by <a href="https://unsplash.com/@deep_erudite?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Deep</a> on <a href="https://unsplash.com/illustrations/abstract-shapes-in-muted-colors-create-a-design-9zHK-f4wT50?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
