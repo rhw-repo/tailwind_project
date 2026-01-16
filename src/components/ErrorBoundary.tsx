@@ -65,7 +65,7 @@ class ErrorBoundary extends Component<Props, State> {
                   below to go back.
                 </p>
                 <button
-                  className="py-2 px-4 bg-blue-700 text-neutral-50 border rounded cursor-pointer mb-4"
+                  className="py-2 px-4 bg-blue-700 landscape:text-sm  text-neutral-50 border rounded cursor-pointer mb-4"
                   onClick={() => (window.location.href = "/store")}
                 >
                   Go to Store
