@@ -1,15 +1,12 @@
 import type { FC } from "react";
 import errorBoundaryImg from "/imgs/error-boundary-image.webp";
 
-//export interface BlankPagesTemplateProps {
-
-//}
-
 const BlankPagesTemplate: FC = () => {
   return (
     <section className="flex justify-center items-center h-screen w-screen bg-[url('/imgs/error-boundary-bg-image.svg')] bg-cover bg-center">
-      <div className="flex flex-col justify-center items-center landscape:flex-row landscape:h-[80vh] landscape:lg:h-auto landscape:xl:flex-col w-3xl p-5 rounded-xl bg-gray-50 text-neutral-900 text-center text-balance text-2xl font-bold portrait:m-8 portrait:sm:md-4 m-4">
-        <div className="landscape:flex flex-col landscape:flex-1">
+      <div className="flex flex-col justify-center items-center landscape:flex-row landscape:h-full landscape:md:h-[80vh] landscape:lg:h-auto landscape:xl:flex-col max-w-3xl w-full [@media_(min-width:768px)_and_(max-width:1024px)_and_(orientation:portrait)]:max-w-lg p-5 rounded-xl bg-gray-50 text-neutral-900 text-center text-balance text-2xl font-bold portrait:m-8 portrait:sm:md-4 m-4">
+        {/* Column 1 in landscape */}
+        <div className="flex-col landscape:flex-1 landscape:justify-center">
           <h1 className="text-5xl landscape:text-3xl md:text-9xl text-gray-600 m-4">
             Coming Soon
           </h1>
@@ -17,17 +14,18 @@ const BlankPagesTemplate: FC = () => {
             This page has no content at this time.
           </h2>
         </div>
-        <div className="aspect-3/2 p-4 overflow-hidden mb-8 landscape:mb-0 landscape:w-2xs landscape-flex-1">
+
+        {/* Column 2 in landscape */}
+        <div className="aspect-3/2 p-4 overflow-hidden mb-8 landscape:m-0 flex-col landscape:flex-1">
           <img
             src={errorBoundaryImg}
             alt="A retro style robot toy stares with a fixed expression."
             className="object-cover"
           />
         </div>
-        <div className="flex flex-col justify-between mt-4 gap-4 landscape:flex-1">
-          <p className="text-base landscape:text-base font-medium text-gray-500 text-balance">
-            We apologize for the inconvenience.
-          </p>
+
+        {/* Column 3 in landscape */}
+        <div className="flex flex-col justify-center mt-4 gap-4 landscape:justify-center landscape:flex-1 landscape:h-full landscape:mt-0">
           <p className="text-base landscape:text-base font-medium text-gray-700 text-balance">
             Please visit the Store page.
           </p>
