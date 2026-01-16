@@ -13,7 +13,7 @@ function App() {
       <ErrorBoundary resetKey={location.pathname}>
         <ShoppingCartProvider>
           <Navbar />
-          <main className="m-4 flex flex-col justify-center items-center">
+          <main className="flex flex-col justify-center items-center">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/store" element={<Store />} />
