@@ -26,7 +26,7 @@ export const Navbar = () => {
           >
             About
           </NavLink>
-          <NavLink to="/bug">Test ErrorBoundary</NavLink>
+          {/* <NavLink to="/bug">Test ErrorBoundary</NavLink> */}
         </div>
         <div>
           {cartQuantity > 0 && (

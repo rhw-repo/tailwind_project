@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import BuggyComponent from "./components/BuggyComponent";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/bug" element={<BuggyComponent />} />
             </Routes>
+            <Footer />
           </main>
         </ShoppingCartProvider>
       </ErrorBoundary>

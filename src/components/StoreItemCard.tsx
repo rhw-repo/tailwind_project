@@ -54,21 +54,21 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
             <div className="flex justify-center items-center gap-2">
               <button
                 onClick={() => increaseCartQuantity(id)}
-                className="bg-blue-700 text-neutral-100 rounded-sm px-4 py-2"
+                className="flex justify-center items-center bg-blue-700 text-neutral-100 rounded-sm px-4 py-0.5"
               >
                 +
               </button>
-              <span className="text-2xl">{quantity} in cart</span>
+              <span className="text-1xl">{quantity} in cart</span>
               <button
                 onClick={() => decreaseCartQuantity(id)}
-                className="bg-blue-700 text-neutral-100 rounded-sm px-4 py-2"
+                className="flex justify-center items-center bg-blue-700 text-neutral-100 rounded-sm px-4 py-0.5"
               >
                 -
               </button>
             </div>
             <button
               onClick={() => removeFromCart(id)}
-              className="bg-red-400 text-xs sm:text-sm md:text-base lg:text-lg text-neutral-100 rounded-sm p-2 m-4"
+              className="bg-red-400 text-xs sm:text-sm md:text-base text-neutral-100 rounded-sm py-1 px-1.5 m-4"
             >
               Remove
             </button>
