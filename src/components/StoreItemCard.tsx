@@ -1,5 +1,6 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/formatCurrency";
+import PrimaryButton from "./PrimaryButton";
 
 export interface StoreItemCardProps {
   id: number;
@@ -41,14 +42,16 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         </p>
       </div>
 
-      <div className="mt-auto">
-        {quantity === 0 ? (
-          <button
+      {/*<button
             onClick={() => increaseCartQuantity(id)}
             className="w-full bg-blue-700 text-neutral-100 rounded-sm px-4 py-2"
           >
             Add To Cart
-          </button>
+          </button>*/}
+
+      <div className="mt-auto">
+        {quantity === 0 ? (
+          <PrimaryButton />
         ) : (
           <div className="flex flex-col items-center gap-2">
             <div className="flex justify-center items-center gap-2">

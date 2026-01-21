@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import errorBoundaryImg from "/imgs/error-boundary-image.webp";
+import PrimaryButton from "./PrimaryButton";
 
 const BlankPagesTemplate: FC = () => {
   return (
@@ -32,12 +33,13 @@ const BlankPagesTemplate: FC = () => {
             <p className="text-base landscape:text-base font-medium text-gray-700 text-balance">
               Please visit the Store page.
             </p>
-            <button
+            {/*<button
               className="py-2 px-4 bg-blue-700 text-neutral-50 landscape:text-sm border rounded cursor-pointer mb-4"
               onClick={() => (window.location.href = "/store")}
-            >
+            > */}
+            <PrimaryButton onClick={() => (window.location.href = "/store")}>
               Go to Store
-            </button>
+            </PrimaryButton>
           </div>
         </div>
       </section>
