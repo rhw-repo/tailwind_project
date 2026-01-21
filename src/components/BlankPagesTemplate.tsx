@@ -37,7 +37,10 @@ const BlankPagesTemplate: FC = () => {
               className="py-2 px-4 bg-blue-700 text-neutral-50 landscape:text-sm border rounded cursor-pointer mb-4"
               onClick={() => (window.location.href = "/store")}
             > */}
-            <PrimaryButton onClick={() => (window.location.href = "/store")}>
+            <PrimaryButton
+              style="blankPages"
+              onClick={() => (window.location.href = "/store")}
+            >
               Go to Store
             </PrimaryButton>
           </div>
