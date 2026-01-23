@@ -1,8 +1,14 @@
 import type { FC } from "react";
 import errorBoundaryImg from "/imgs/error-boundary-image.webp";
 import PrimaryButton from "./PrimaryButton";
+import { useLocation } from "react-router-dom";
+import { getButtonText } from "../utilities/getButtonText";
 
 const BlankPagesTemplate: FC = () => {
+  const { pathname } = useLocation();
+
+  const buttonLabel = getButtonText(pathname);
+
   return (
     <>
       {/* Handles component display within page */}
@@ -33,15 +39,11 @@ const BlankPagesTemplate: FC = () => {
             <p className="text-base landscape:text-base font-medium text-gray-700 text-balance">
               Please visit the Store page.
             </p>
-            {/*<button
-              className="py-2 px-4 bg-blue-700 text-neutral-50 landscape:text-sm border rounded cursor-pointer mb-4"
-              onClick={() => (window.location.href = "/store")}
-            > */}
             <PrimaryButton
               style="blankPages"
               onClick={() => (window.location.href = "/store")}
             >
-              Go to Store
+              {buttonLabel}
             </PrimaryButton>
           </div>
         </div>

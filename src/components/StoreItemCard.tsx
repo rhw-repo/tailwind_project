@@ -1,6 +1,8 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/formatCurrency";
 import PrimaryButton from "./PrimaryButton";
+import { useLocation } from "react-router-dom";
+import { getButtonText } from "../utilities/getButtonText";
 
 export interface StoreItemCardProps {
   id: number;
@@ -24,6 +26,10 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
 
   const quantity = getItemQuantity(id);
 
+  const { pathname } = useLocation();
+
+  const buttonLabel = getButtonText(pathname);
+
   return (
     <div key={id} className="flex flex-col shadow-sm p-4 rounded-sm h-full">
       <div className="aspect-3/2 w-full overflow-hidden">
@@ -42,16 +48,9 @@ export const StoreItemCard: React.FC<StoreItemCardProps> = ({
         </p>
       </div>
 
-      {/*<button
-            onClick={() => increaseCartQuantity(id)}
-            className="w-full bg-blue-700 text-neutral-100 rounded-sm px-4 py-2"
-          >
-            Add To Cart
-          </button>*/}
-
       <div className="mt-auto">
         {quantity === 0 ? (
-          <PrimaryButton />
+          <PrimaryButton>{buttonLabel}</PrimaryButton>
         ) : (
           <div className="flex flex-col items-center gap-2">
             <div className="flex justify-center items-center gap-2">
