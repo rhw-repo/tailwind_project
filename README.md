@@ -3,7 +3,14 @@
 ![Tailwind CSS](https://readmebadge.vercel.app/badges/tailwind.svg) ![React](https://readmebadge.vercel.app/badges/react.svg)
 ![Typescript](https://readmebadge.vercel.app/badges/typescript.svg)
 
-Project to implement Tailwind CSS
+Sandbox project to implement Tailwind CSS the apply DRY principle through Tailwind Variants
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Tailwind CSS
+- Tailind Variants
 
 ---
 
